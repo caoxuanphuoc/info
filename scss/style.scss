@@ -1,0 +1,199 @@
+body{
+    font-family: 'Roboto', sans-serif;
+ //   background: yellow;
+ 
+}
+header{
+    color: white;
+    font-size: 25px;
+    background: black;
+    display: flex;
+    justify-content: space-around;
+    border-bottom:  5px solid rgb(196, 75, 75);
+        img{
+           width: 80px;
+        }
+    
+    align-items: center;
+    nav{
+        a{
+            color: white;
+        }
+        a:hover{
+            color: green;
+        }
+         >ul{
+            display: flex;
+            li:hover {
+                color: green;
+            }
+            > li{
+                position: relative;
+                margin-left: 50px;
+                color: white;
+                &::after{
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 3px;
+                    background: white;
+                    transition: 0.5s;
+                }
+                 &:hover {
+                    &::after{
+                        width: 100%;
+                    }
+                }
+              //  ---------------------box-tool-------------------------------
+                &:hover ul.box_tool{
+                    display: block;
+                    
+                }
+                ul.box_tool{
+                    display: none;
+                    padding: 5px;
+                    width: 150px;
+                    text-align: center;
+                    background: rgb(148, 72, 192);
+                    position: absolute;
+                    z-index: 2;
+                    left: -20px;
+                    top: 30px;
+                    border-radius: 10px;
+                    border: 0.1px solid black;
+                    li{
+                        margin-top: 5px;
+                        margin-bottom: 5px;
+                        a{  
+                            font-size: 25px ;
+                            color: black;
+                        }
+                    }
+                    li:hover{
+                        background: rgba($color: rgb(43, 214, 86), $alpha: 1);
+                        border-radius: 20px;
+                    }
+                }
+
+            }         
+        }
+    }
+}
+footer{
+
+    width: 100%;
+    height: 100px;
+    background:  rgba($color: #000000, $alpha: 1);
+    font-size: 15px;
+    color: white;
+    ul{
+      text-align: center;
+    }
+    a{
+        color: white;
+    }
+
+}
+.first{
+    height: 400px;
+    background: #377caa;
+    position: relative;
+    display: flex;
+    z-index: 1;
+    .avt{
+        width: 310px;
+        height: 310px;
+        border: 0.001px solid rgb(158, 155, 155);
+        border-radius: 50%;
+        position: absolute;
+        left: 7%;
+        top: 6%;
+        img{
+            width: 100%;
+            border-radius: 50%;
+            border: 0.001px solid rgb(53, 46, 46);
+            transform: scale(0.95);
+            transition: 0.5s; 
+        }
+        img:hover {
+            transform: scale(1);
+            box-shadow: 5px 5px 5px 6px;
+
+        }
+        span{
+            font-weight: bold;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%) ;
+            padding-top: 20px;
+            font-size: 20px;
+        }
+    }
+    .info{
+        width: 300px;
+   //     background: white;
+        position: relative;
+        left: 35%;
+        .card-info{
+            .card1{
+                box-shadow: 10px 5px 5px rgb(43, 42, 42);
+                position: absolute;
+                top: 10%;
+                width: 250px;
+                height: 300px;
+                background: yellow;
+                transform: rotate(10deg);
+            }    
+            .card2{
+                box-shadow: 5px 5px 5px rgb(43, 42, 42);
+                position: absolute;
+                top: 10%;
+                width: 250px;
+                height: 300px;
+                background: rgb(32, 201, 55);
+                transform: rotate(5deg);
+            }
+            .card3{
+                box-shadow: 5px 5px 5px rgb(43, 42, 42);
+                .head{
+                    padding-top: 10px;
+                    display: flex;
+                    justify-content: space-around;
+                    .dote{
+                        background: rgb(32, 201, 55);
+                        box-shadow: inset 1px 1px 3px 1px rgb(34, 34, 33);
+                        width: 25px;
+                        height: 25px;
+                        border-radius: 50%;
+                    }
+                }
+                position: absolute;
+                top: 10%;
+                width: 250px;
+                height: 300px;
+                background: rgb(218, 141, 27);
+                transform: rotate(1deg);
+                ul{ 
+                    top: 50px;
+                    position: absolute;
+                    li{ 
+                        padding-bottom: 10px;
+                        margin: 10px;
+                        border-bottom: 1px  double black;
+                        span{
+                            font-weight: bold;
+                        }
+                        
+                    }
+                 }
+            }
+        }
+    
+
+    }
+}
+.second{
+    height: 400px;
+    background: goldenrod;
+    
+}
