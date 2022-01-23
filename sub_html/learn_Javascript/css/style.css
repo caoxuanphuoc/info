@@ -15,24 +15,45 @@ a:hover {
 
 header {
   border-bottom: 3px solid black;
-  background: #880eec;
+  background: #030105;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header img {
   height: 100px;
 }
 
-ul {
+header .logo1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .logo1 img {
+  height: 50px;
+}
+
+header .logo1 h1 {
+  font-size: 90px;
+  color: #de5b11;
+}
+
+.command ul {
   padding: 50px;
 }
 
-ul > li {
+.command ul > li {
   padding-top: 20px;
   list-style: square;
   color: blue;
@@ -40,35 +61,64 @@ ul > li {
           box-shadow: 15px 10px 5px #141212;
 }
 
-ul > li ul {
+.command ul > li ul {
+  padding: 2px;
   font-weight: bold;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-ul > li ul li {
+.command ul > li ul li {
   list-style: decimal;
   color: #be1414;
   margin: 10px;
   font-size: large;
 }
 
-ul > li ul li p {
+.command ul > li ul li p {
   font-weight: 100;
   color: black;
 }
 
-ul > li ul .first {
+.command ul > li ul .first {
   width: 500px;
 }
 
-ul > li ul .second {
+.command ul > li ul .second {
   width: 500px;
   padding-left: 200px;
 }
 
 body {
   background: goldenrod;
+}
+
+footer {
+  margin-top: 50px;
+  padding-top: 10px;
+  width: 100%;
+  height: 110px;
+  background: black;
+  font-size: 15px;
+  color: white;
+}
+
+footer ul li {
+  list-style: none;
+}
+
+footer ul {
+  color: white;
+  text-align: center;
+}
+
+footer ul li {
+  color: white;
+  padding: 5px;
+}
+
+footer a {
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

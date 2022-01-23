@@ -4,496 +4,550 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../image/icon/favicon2.ico"/>
     <title>JavaScript</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <div class="logo">
-         <img  src="img/logo-removebg-preview.png" alt="">
+         <a href="../../index.html"><img  src="img/logo-removebg-preview.png" alt=""></a>
+        </div>
+        <div class="logo1">
+            <img src="img/logo.png" alt="">
+            <h1>JavaScript</h1>
         </div>
     </header>
-    <ul>
-        <li> <h2>String</h2>
-            <ul>
-                <div class="first">
-                <li>Note: 
-                    <p>định nghĩa <b>nameString</b> là một biến kiểu string <br>
-                        <b>keyWord</b> là biến được thiết lập trước 
-                    </p> 
-                </li>
-                <li>length
-                    <p> systax: nameString.<b>length</b> <br>
-                        return length of string
-                    </p>
-
-                </li>   
-                <li>indexOf / search
-                    <p>
-                        Systax: nameString.<b>indexOf(</b>keyWord, start) <br>
-                        return first positive appear keyWord in String, start from <b>start</b> to end. <br>
-                        we can use <b>lastIndexOf(keyWord, start)</b> to find from end to begin. <br>
-                        and you can use <b>seach(keyWord)</b> which same as indexOf about operator but don't have variable <b>start</b>
-                        if don't find return -1
-                    </p>
-                </li> 
-                <li>slice()
-                    <p>
-                        Systax: nameString.<b>slice</b>(start, end) <br>
-                        Return sub_String length = (end - start)
-                        sometime slice(0) help you coppy string;
-                        you can use nagative number to cut from back to front
-                    </p>
-                </li>
-              
-            </div>
-            <div class="second">
-                <li> replace
-                    <p>
-                        Systax: nameString.<b>replace(</b>keyWord, change) <br>
-                        replace first <b>keyword</b> in nameString to <b>change</b>
-                        - if you want change all sub_String equal <b>keyWord </b> 
-                        you can use systax : <b>/keyWord/g</b> to change all
-                    </p>
-                </li>
-                <li> toUpperCase() / toLowerCase()
-                    <p> systax: nameString.<b>toUpperCase()</b> <br>
-                        Yeb!!! like this name, I think you know
-                    </p>
-
-                </li>
-                <li>trim()
-                    <p>
-                        systax: nameString.<b>trim()</b> <br>
-                        When you need remove all spaceWhile excess in leading and tralling
-                    </p>
-                </li>
-                <li>split()
-                    <p>Systax: name.<b>split</b>('-') <br>
-                        return array include words separate by '-' in nameString
-                    </p>
-                </li>
-                <li>charAt()
-                    <p>systax: nameString.<b>charAt</b>(index)
-                    <br> return char of index</p>
-                </li>
-            </div>
-            </ul>
-
-        </li><!--end String-->
-        <li>  <h2>Array</h2>
-            <ul>
-                <div class="first">
-                <li>length
-                    <p>Trả về độ dài mảng</p>
-                </li>
-                <li>toString()
-                    <p>Chuyển mảng sang String <br> nameArray.toString()</p>
-                </li>
-                <li>join()
-                    <p>Tạo phần tử ngăn cách giữa các mảng <br> Syntax: nameArray.join("-")
-                        ex: befor: [a, b, c, d]  after: [a-b-c-d];
-                    </p>
-                </li>
-                <li>pop()
-                    <p>Xóa phần tử cuối mảng nếu không còn thì trả về undefined<br> Syntax: nameArray.pop()</p>
-                </li>
-                <li>Shift()
-                    <p>Xóa phần tử ở đầu mảng nếu không còn thì trả về undefined <br> Syntax: nameArray.shift()</p>
-                </li>
-                <li>
-                    push()
-                    <p>Thêm một phần tử vào cuối mảng <br>
-                        Syntax: nameArray.push("abc");
-                    </p>
-                </li>
-                </div> <!--phan 1-->
-                <div class="second">
-
-                    <li> unshift();
-                        <p>Thêm phần tử vào đầu mảng <br>  Syntax: nameArray.unshift("abc"); </p>
-                        
+    <!--danh sach lenh JS-->
+    <div class="command">
+        <ul>
+            <li> <h2>String</h2>
+                <ul>
+                    <div class="first">
+                    <li>Note: 
+                        <p>định nghĩa <b>nameString</b> là một biến kiểu string <br>
+                            <b>keyWord</b> là biến được thiết lập trước 
+                        </p> 
                     </li>
-                    <li>splice()
-                        <p> - Xóa các phần tử bất kỳ <br>
-                            Systax: Array.splice(a, b) <br> 
-                            + a: vị trí bắt đầu <br>
-                            + b: số lượng xóa
+                    <li>length
+                        <p> systax: nameString.<b>length</b> <br>
+                            return length of string
                         </p>
+    
+                    </li>   
+                    <li>indexOf / search
                         <p>
-                            - Chèn, thay thế phần tử: Bằng cách truyền vào phần tử thứ 3..n ta có thể linh động xóa hoặc chèn.
-                            systax: Array.splice(a, b, c) <br> 
-                            + a: vị trí bắt đầu <br>
-                            + b: số lượng xóa <br>
-                            + c..n: Value chèn
+                            Systax: nameString.<b>indexOf(</b>keyWord, start) <br>
+                            return first positive appear keyWord in String, start from <b>start</b> to end. <br>
+                            we can use <b>lastIndexOf(keyWord, start)</b> to find from end to begin. <br>
+                            and you can use <b>seach(keyWord)</b> which same as indexOf about operator but don't have variable <b>start</b>
+                            if don't find return -1
+                        </p>
+                    </li> 
+                    <li>slice()
+                        <p>
+                            Systax: nameString.<b>slice</b>(start, end) <br>
+                            Return sub_String length = (end - start)
+                            sometime slice(0) help you coppy string;
+                            you can use nagative number to cut from back to front
                         </p>
                     </li>
-                    <li>concat()
-                        <p>Nối hai mảng lại với nhau A1 trước A2 <br>
-                            Systax: Array1.concat(Array2) 
+                    <li> replace
+                        <p>
+                            Systax: nameString.<b>replace(</b>keyWord, change) <br>
+                            replace first <b>keyword</b> in nameString to <b>change</b>
+                            - if you want change all sub_String equal <b>keyWord </b> 
+                            you can use systax : <b>/keyWord/g</b> to change all
+                        </p>
+                    </li>
+                </div>
+                <div class="second">
+                   
+                    <li> toUpperCase() / toLowerCase()
+                        <p> systax: nameString.<b>toUpperCase()</b> <br>
+                            Yeb!!! like this name, I think you know
+                        </p>
+    
+                    </li>
+                    <li>trim()
+                        <p>
+                            systax: nameString.<b>trim()</b> <br>
+                            When you need remove all spaceWhile excess in leading and tralling
+                        </p>
+                    </li>
+                    <li>split()
+                        <p>Systax: name.<b>split</b>('-') <br>
+                            return array include words separate by '-' in nameString
+                        </p>
+                    </li>
+                    <li>charAt()
+                        <p>systax: nameString.<b>charAt</b>(index)
+                        <br> return char of index</p>
+                    </li>
+                    <li>include()
+                        <p>systax: <br>
+                            <b>nameString.include(value, |start|)</b> <br>
+                            return boolean if nameString have sub_string is value
+                            is start =0 then don't need write
+                        </p>
+                    </li>
+                </div>
+                </ul>
+    
+            </li><!--end String-->
+            <li>  <h2>Array</h2>
+                <ul>
+                    <div class="first">
+                    <li>length
+                        <p>Trả về độ dài mảng</p>
+                    </li>
+                    <li>toString()
+                        <p>Chuyển mảng sang String <br> nameArray.toString()</p>
+                    </li>
+                    <li>join()
+                        <p>Tạo phần tử ngăn cách giữa các mảng <br> Syntax: nameArray.join("-")
+                            ex: befor: [a, b, c, d]  after: [a-b-c-d];
+                        </p>
+                    </li>
+                    <li>pop()
+                        <p>Xóa phần tử cuối mảng nếu không còn thì trả về undefined<br> Syntax: nameArray.pop()</p>
+                    </li>
+                    <li>Shift()
+                        <p>Xóa phần tử ở đầu mảng nếu không còn thì trả về undefined <br> Syntax: nameArray.shift()</p>
+                    </li>
+                    <li>
+                        push()
+                        <p>Thêm một phần tử vào cuối mảng <br>
+                            Syntax: nameArray.push("abc");
+                        </p>
+                    </li>
+                    </div> <!--phan 1-->
+                    <div class="second">
+    
+                        <li> unshift();
+                            <p>Thêm phần tử vào đầu mảng <br>  Syntax: nameArray.unshift("abc"); </p>
+                            
                         </li>
-                        <li>slice()
-                            <p>Cắt các phần tử liên tiếp và trả về mảng sau khi cắt <br>
-                                systax: Array.slice(a, b) <br>
-                                + a: vị trí ban đầu. <br>
-                                + b: số lượng phần tử xóa.
+                        <li>splice()
+                            <p> - Xóa các phần tử bất kỳ <br>
+                                Systax: Array.splice(a, b) <br> 
+                                + a: vị trí bắt đầu <br>
+                                + b: số lượng xóa
+                            </p>
+                            <p>
+                                - Chèn, thay thế phần tử: Bằng cách truyền vào phần tử thứ 3..n ta có thể linh động xóa hoặc chèn.
+                                systax: Array.splice(a, b, c) <br> 
+                                + a: vị trí bắt đầu <br>
+                                + b: số lượng xóa <br>
+                                + c..n: Value chèn
                             </p>
                         </li>
-                    </div> <!--phan 2-->
-            </ul>                
-        </li><!--end-Array-->
-        <li><h2>Array advanced</h2>
+                        <li>concat()
+                            <p>Nối hai mảng lại với nhau A1 trước A2 <br>
+                                Systax: Array1.concat(Array2) 
+                            </li>
+                            <li>slice()
+                                <p>Cắt các phần tử liên tiếp và trả về mảng sau khi cắt <br>
+                                    systax: Array.slice(a, b) <br>
+                                    + a: vị trí ban đầu. <br>
+                                    + b: số lượng phần tử xóa.
+                                </p>
+                            </li>
+                        </div> <!--phan 2-->
+                </ul>                
+            </li><!--end-Array-->
+            <li><h2>Array advanced</h2>
+                <ul>
+                    <div class="first">
+                    <li>NOTE:
+                        <p>Định nghĩa trước <b>nameArray</b> là tên của array đã được khai báo 
+                            <b>element</b> là phần tử trong mảng<br>
+                        các hàm dưới đây điều thuộc loại tham số truyền vào là một hàm (call back)
+                        </p>
+                    </li>
+                    <li>forEach()
+                        <p>systax: <br>
+                            nameArray.<b>forEach</b> (function(element, index) {<br>
+                                code <br>
+                            }); <br>
+                            Công dụng chủ yếu là duyệt các phần tử trong mảng
+                        </p>
+                    </li>
+                    <li> every()
+                        <p>systax: <br>
+                            var check = nameArray.<b>every</b> (function(element, index) {<br>
+                                return element === 0
+                            }); <br>
+                            Use: when you want to check all element satisfy only 1 condision, return boolean
+                        </p>
+                    </li>
+                    <li> some()
+                        <p>systax: <br>
+                            var check = nameArray.<b>some</b> (function(element, index) {<br>
+                                return element === 0
+                            }); <br>
+                            Use: when you want to check 1 of all element satisfy only 1 condision, return boolean
+                        </p>
+                    </li>
+                    <li>find()
+                        <p>systax: <br>
+                            var check = nameArray.<b>find</b> (function(element, index) {<br>
+                                return element === 0
+                            }); <br>
+                            Use: when you want to find the first element satisfy condision, return element or Sub_object
+                        </p>
+                    </li>
+                    <li>filter()
+                        <p>systax: <br>
+                            var check = nameArray.<b>filter</b> (function(element, index) {<br>
+                                return element === 0 <br>
+                            }); <br>
+                            Use: when you want to find all elements satisfy condision, return list element or list Sub_object
+                        </p>
+                    </li>
+                </div>
+                <div class="second">
+                    <li>map()
+                        <p>systax: <br>
+                            var check = nameArray.<b>map</b> (function(element, index) {<br>
+                                return element.var <br>//which var is variable in object <br>
+                            }); <br>
+                            Use: <b>return Array</b> when you want to split properties of array or object and
+                            change value from array into new array have differen value <br>
+                            In reality we use <b>map()</b> to reder code for html by plus '' to
+                            array and you have a code
+                        </p>
+                    </li>
+                    <li>reduce()
+                        <p>systax: <br>
+                            var check = nameArray.<b>reduce</b> (function(init, element, index ,originArray) {<br>
+                                return init + element.value <br>
+                            }); <br>
+                            Use: <b>return 1 Value</b> when you want synthetic and use math for  values of element
+                            then you can use reduce() function <br>
+                            For example: sum of array integer, synthetic many array into one array
+                        , use to write code html base on string array .
+                        </p>
+    
+                    </li>
+                    <li>include()
+                        <p>systax: <br>
+                            <b>nameArray.include(value, |start|)</b> <br>
+                            return boolean if array have element is <b>value</b>
+                            is start =0 then don't need write
+                        </p>
+                    </li>
+                </div>
+                </ul>
+            </li> <!--end array advanced-->
+            <li><h2>Function</h2>
             <ul>
                 <div class="first">
-                <li>NOTE:
-                    <p>Định nghĩa trước <b>nameArray</b> là tên của array đã được khai báo 
-                        <b>element</b> là phần tử trong mảng<br>
-                    các hàm dưới đây điều thuộc loại tham số truyền vào là một hàm (call back)
+                <li>Định Nghĩa:
+                    <p> Hàm giúp ta tự định nghĩa và xử lý được một khối lệnh <br>
+                        systax: <br> 
+                        function nameF(  a,  b){ <br>
+                              ----  khối lệnh <br>
+                        } <br>
+                        Các biến trong hàm có thể nhận kiểu dữ liệu tùy theo KDL của hàm gọi <br>
+                        biến trong hàm thì chỉ có hàm sử dụng được
                     </p>
                 </li>
-                <li>forEach()
-                    <p>systax: <br>
-                        nameArray.<b>forEach</b> (function(element, index) {<br>
-                            code <br>
-                        }); <br>
-                        Công dụng chủ yếu là duyệt các phần tử trong mảng
+                <li>Gọi hàm
+                    <p>Như bình thường <br>
+                        Nếu truyền thiếu tham số thì tham số tự nhận kiểu undefined
                     </p>
+    
                 </li>
-                <li> every()
-                    <p>systax: <br>
-                        var check = nameArray.<b>every</b> (function(element, index) {<br>
-                            return element === 0
-                        }); <br>
-                        Use: when you want to check all element satisfy only 1 condision, return boolean
-                    </p>
-                </li>
-                <li> some()
-                    <p>systax: <br>
-                        var check = nameArray.<b>some</b> (function(element, index) {<br>
-                            return element === 0
-                        }); <br>
-                        Use: when you want to check 1 of all element satisfy only 1 condision, return boolean
-                    </p>
-                </li>
-                <li>find()
-                    <p>systax: <br>
-                        var check = nameArray.<b>find</b> (function(element, index) {<br>
-                            return element === 0
-                        }); <br>
-                        Use: when you want to find the first element satisfy condision, return element or Sub_object
-                    </p>
-                </li>
-                <li>filter()
-                    <p>systax: <br>
-                        var check = nameArray.<b>filter</b> (function(element, index) {<br>
-                            return element === 0 <br>
-                        }); <br>
-                        Use: when you want to find all elements satisfy condision, return list element or list Sub_object
+                <li>Arguments
+                    <p>
+                        Sử dụng trong hàm nhằm nhập được nhiều tham số không biết trước được <br>
+                        ex: <br>
+                        function hello(){ <br>
+                            console.log(Arguments) <br>
+                        }b <br>
+                        hello(1, 3, 4, 5) <br>
+                            Hàm sẽ hiểu bạn đang nhập vào 1 mảng 
                     </p>
                 </li>
             </div>
             <div class="second">
-                <li>map()
-                    <p>systax: <br>
-                        var check = nameArray.<b>map</b> (function(element, index) {<br>
-                            return element.var <br>//which var is variable in object <br>
-                        }); <br>
-                        Use: <b>return Array</b> when you want to split properties of array or object and
-                        change value from array into new array have differen value <br>
-                        In reality we use <b>map()</b> to reder code for html by plus '' to
-                        array and you have a code
-                    </p>
+                <li>return
+                    <p>Hàm trả về giá trị, nếu không có return thì trả về untifined</p>
                 </li>
-                <li>reduce()
-                    <p>systax: <br>
-                        var check = nameArray.<b>reduce</b> (function(init, element, index ,originArray) {<br>
-                            return init + element.value <br>
-                        }); <br>
-                        Use: <b>return 1 Value</b> when you want synthetic and use math for  values of element
-                        then you can use reduce() function <br>
-                        For example: sum of array integer, synthetic many array into one array
-                    , use to write code html base on string array .
-                    </p>
-
+                <li>Định nghĩa hàm trong hàm
+                    <p>Có thể định nghĩa hàm trong hàm nhưng không gọi được hàm đó ở một hàm khác</p>
                 </li>
-            </div>
-            </ul>
-        </li> <!--end array advanced-->
-        <li><h2>Function</h2>
-        <ul>
-            <div class="first">
-            <li>Định Nghĩa:
-                <p> Hàm giúp ta tự định nghĩa và xử lý được một khối lệnh <br>
-                    systax: <br> 
-                    function nameF(  a,  b){ <br>
-                          ----  khối lệnh <br>
-                    } <br>
-                    Các biến trong hàm có thể nhận kiểu dữ liệu tùy theo KDL của hàm gọi <br>
-                    biến trong hàm thì chỉ có hàm sử dụng được
-                </p>
-            </li>
-            <li>Gọi hàm
-                <p>Như bình thường <br>
-                    Nếu truyền thiếu tham số thì tham số tự nhận kiểu undefined
-                </p>
-
-            </li>
-            <li>Arguments
-                <p>
-                    Sử dụng trong hàm nhằm nhập được nhiều tham số không biết trước được <br>
-                    ex: <br>
-                    function hello(){ <br>
-                        console.log(Arguments) <br>
-                    }b <br>
-                    hello(1, 3, 4, 5) <br>
-                        Hàm sẽ hiểu bạn đang nhập vào 1 mảng 
-                </p>
-            </li>
-        </div>
-        <div class="second">
-            <li>return
-                <p>Hàm trả về giá trị, nếu không có return thì trả về untifined</p>
-            </li>
-            <li>Định nghĩa hàm trong hàm
-                <p>Có thể định nghĩa hàm trong hàm nhưng không gọi được hàm đó ở một hàm khác</p>
-            </li>
-            <li> function declaration
-                <p>
-                    Là hàm khai báo bình thường, trong hosting nó có thể được gọi trước khi định nghĩa 
-                </p>
-            </li>
-            <li>function expression
-                <p> Syntax: <br>
-                    var nameFun = function (){ <br>
-                        khối lệnh <br>
-                    } <br>
-                    Sau function có thể đặt thêm tên, hàm này không gọi được trước khi định nghĩa
-                </p>
-            </li>      
-        </div>
-         
-        </ul>
-        </li><!--end function-->
-        <li><h2>Object</h2>
-            <ul>
-                <div class="first">
-                <li>Object 
-                   <p>
-                    Khai báo object <br>
-                    Syntax: <br>
-                    var NameOject ={ <br>
-                        key: value,<br>
-                        key: value <br>
-                    };<br>
-                   </p>
-
-                </li>
-                <li> ADD PAIR
-                    <p>Để thêm một pair mới ta dùng <br>
-                        Syntax: NameOject.newKey= newValue <br> or
-                        systax: NameOject['newkey_error']= newValue
-                    </p>
-                </li>
-                <li>Truy xuất
-                    <p>Systax: nameQbject.namekey nếu không khớp key thì trả về undefined 
-                        <br> or:
-                        Systax: nameQbject['namekey-error']
-                    </p>
-                </li>
-                <li>Đưa biến về làm key
-                    <p> Đề đưa một biến đã được khai báo vào làm key của 1 object : <br>
-                    Systax: [name_key_var] : value <br> viết ở trong object
-                </p>
-                </li>
-                <li>xóa pair
-                    <p>Syntax: delete nameQbject.key_delete</p>
-                </li>
-                <li>Value là function (method)
+                <li> function declaration
                     <p>
+                        Là hàm khai báo bình thường, trong hosting nó có thể được gọi trước khi định nghĩa 
+                    </p>
+                </li>
+                <li>function expression
+                    <p> Syntax: <br>
+                        var nameFun = function (){ <br>
+                            khối lệnh <br>
+                        } <br>
+                        Sau function có thể đặt thêm tên, hàm này không gọi được trước khi định nghĩa
+                    </p>
+                </li>      
+            </div>
+             
+            </ul>
+            </li><!--end function-->
+            <li><h2>Object</h2>
+                <ul>
+                    <div class="first">
+                    <li>Object 
+                       <p>
+                        Khai báo object <br>
                         Syntax: <br>
                         var NameOject ={ <br>
                             key: value,<br>
-                            key: function(){<br>
-                                return xyz;
-                            } <br>
+                            key: value <br>
                         };<br>
-                        Để gọi được key là giá trị của function thì phải thêm toán tử call () trước tên key <br>
-                        ex: nameQbject.key()
+                       </p>
+    
+                    </li>
+                    <li> ADD PAIR
+                        <p>Để thêm một pair mới ta dùng <br>
+                            Syntax: NameOject.newKey= newValue <br> or
+                            systax: NameOject['newkey_error']= newValue
+                        </p>
+                    </li>
+                    <li>Truy xuất
+                        <p>Systax: nameQbject.namekey nếu không khớp key thì trả về undefined 
+                            <br> or:
+                            Systax: nameQbject['namekey-error']
+                        </p>
+                    </li>
+                    <li>Đưa biến về làm key
+                        <p> Đề đưa một biến đã được khai báo vào làm key của 1 object : <br>
+                        Systax: [name_key_var] : value <br> viết ở trong object
                     </p>
-                </li>
-                <li>Con trỏ this trong object
-                    <p>
-                        Systax: this.key <br>
-                        Với this tương đương tên object
-                    </p>
-                </li>
-            </div> <!--end--first-->
-            <div class="second">
-              
-                
-                <li> Object contructor
-                    <p>
-                        Giống hàm tạo c++: <br>
-                        Systax: <br>
-                        function User(var1, var2, var3){<br>
-                            this.va1 = var1;<br>
-                            this.var2= var2;<br>
-                            this.var3 = var3;<br>
-                        }<br>
-                        Để khởi tạo đối tượng<br>
-                        systax: var name = new User('a', 'ab', 20) <br>
-                        Hiểu chung đây chỉ là một cái khung của đối tượng, ta có thể lấy và gán giá trị cho các biên
-                        thông qua hàm khởi tạo. (new), sau đó nó có thể dùng như string hay number thông thường <br>
-                        ref: <a href="https://youtu.be/FO1OMbT_k2w">Tham khảo F8</a>
-
-                    </p>
-                </li>
-                <li>    add thuộc tính vào object contructor
-                    <p> Để thêm thuộc tính vào OC <br>
-                        Systax: name_create.newKey = newValue
-                    </p>
-                </li>
-                <li>Method trong OC
-                    <p>
-                        Systax: <br>
-                        function User(var1, var2, var3){<br>
-                            this.va1 = var1;<br>
-                            this.var2= var2;<br>
-                            this.var3 = function(){
-                                return this.var1;
-                            }
-                        }<br>
-                        Để gọi ta dùng systax: name_create.method();
-                        
-                    </p>
-                </li>
-                <li>Prototype
-                    <p> Sử dụng từ khóa Prototype để thêm một thuộc tính hoặc phương thức
-                        Systax: User.prototype.newVar = newValue;
-                    </p>
-                </li>
-                <li>DATE object
-                    <p> Systax: var date = new Date(); <br>
-                        Các phương thức thông dụng: <br>
-                        - date.getDate() : return full hour date <br>
-                        - date.getDay() : return day <br>
-                        - date.getFullYear()  : return full 4 digit <br>
-                        - date.getHours() : return 0-23 <br>
-                        - date.getMiliseconds() : retung 0-999 <br>
-                        - date.getMonth() : return 0-11 <br>
-                        - date.getSeconds : return 0-59 <br>
-                        - read more <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date?retiredLocale=vi">Here</a>
-
-                       
-                    </p>
-                </li>
-            </div>
-            </ul>
-        </li><!--end object-->
-        <li><h2>Math Object</h2>
-            <ul>
-                <div class="first">
-                <li>Pi number <p> Systax: Math.Pi()</p></li>
-                <li>round() <p>Systax: Math.round(x.5) <br> làm tròn về số nguyên</p></li>
-                <li>abs() <p>Systax: Math.abs(x)</p></li>
-                <li>ceil() and floor <p>Systax: Math.ceil() || Math.floor</p></li>
-                </div>
+                    </li>
+                    <li>xóa pair
+                        <p>Syntax: delete nameQbject.key_delete</p>
+                    </li>
+                    <li>Value là function (method)
+                        <p>
+                            Syntax: <br>
+                            var NameOject ={ <br>
+                                key: value,<br>
+                                key: function(){<br>
+                                    return xyz;
+                                } <br>
+                            };<br>
+                            Để gọi được key là giá trị của function thì phải thêm toán tử call () trước tên key <br>
+                            ex: nameQbject.key()
+                        </p>
+                    </li>
+                    <li>Con trỏ this trong object
+                        <p>
+                            Systax: this.key <br>
+                            Với this tương đương tên object
+                        </p>
+                    </li>
+                </div> <!--end--first-->
                 <div class="second">
+                  
                     
-                <li>random() <p>Systax: Math.random() <br> return number double
-                    0  random() 1 </p> </li>
-                <li>min() <p>Systax: Math.min(a, b, c, ...) <br> return minimum number</p></li>
-                <li>max() <p>Systax: Math.max(a, b, c ...) <br> return maximum number</p></li>
+                    <li> Object contructor
+                        <p>
+                            Giống hàm tạo c++: <br>
+                            Systax: <br>
+                            function User(var1, var2, var3){<br>
+                                this.va1 = var1;<br>
+                                this.var2= var2;<br>
+                                this.var3 = var3;<br>
+                            }<br>
+                            Để khởi tạo đối tượng<br>
+                            systax: var name = new User('a', 'ab', 20) <br>
+                            Hiểu chung đây chỉ là một cái khung của đối tượng, ta có thể lấy và gán giá trị cho các biên
+                            thông qua hàm khởi tạo. (new), sau đó nó có thể dùng như string hay number thông thường <br>
+                            ref: <a href="https://youtu.be/FO1OMbT_k2w">Tham khảo F8</a>
+    
+                        </p>
+                    </li>
+                    <li>    add thuộc tính vào object contructor
+                        <p> Để thêm thuộc tính vào OC <br>
+                            Systax: name_create.newKey = newValue
+                        </p>
+                    </li>
+                    <li>Method trong OC
+                        <p>
+                            Systax: <br>
+                            function User(var1, var2, var3){<br>
+                                this.va1 = var1;<br>
+                                this.var2= var2;<br>
+                                this.var3 = function(){
+                                    return this.var1;
+                                }
+                            }<br>
+                            Để gọi ta dùng systax: name_create.method();
+                            
+                        </p>
+                    </li>
+                    <li>Prototype
+                        <p> Sử dụng từ khóa Prototype để thêm một thuộc tính hoặc phương thức
+                            Systax: User.prototype.newVar = newValue;
+                        </p>
+                    </li>
+                    <li>DATE object
+                        <p> Systax: var date = new Date(); <br>
+                            Các phương thức thông dụng: <br>
+                            - date.getDate() : return full hour date <br>
+                            - date.getDay() : return day <br>
+                            - date.getFullYear()  : return full 4 digit <br>
+                            - date.getHours() : return 0-23 <br>
+                            - date.getMiliseconds() : retung 0-999 <br>
+                            - date.getMonth() : return 0-11 <br>
+                            - date.getSeconds : return 0-59 <br>
+                            - read more <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date?retiredLocale=vi">Here</a>
+    
+                           
+                        </p>
+                    </li>
                 </div>
-            </ul>
-        </li> <!--end Math-->
-        <li>  <h2>if - else --- switch - case</h2>
-            <ul>
-                <div class="first">
-                <li> if - else <p>
-                        if(condision ) <br>
-                            khối lệnh <br>
-                        else    <br>
-                            khôi lệnh <br>
-                </p>     
-                 </li>  
-                 <li> Rút gọn <p>
-                     systax: dk ? true : false
-                 </p></li> 
-               </div>
-               <div class="second">
-                <li>switch - case
-                    <p> var x <br>
-                        switch(x) { <br>
-                            case a: <br>
-                                code <br>
-                                break; <br>
-                            case b: <br>
-                                code <br>
-                                break <br>
-                            default: <br>
-                                code <br>
-                        }
-
-                    </p>
-
-                          
-                </li>
-            </div>
-            </ul>
-        </li> <!--end - if-else- swicth-case-->
-        <li>   <h2>LOOP</h2>
-            <ul>
-                <div class="first">
-                    <li> for LOOP
-                        <p>
-                            for(var i=1; i\100; i++ ) <br>
-                                code <br>
-                        </p>
-                    </li>
-                    <li> for in
-                        <p>
-                            for(var key in object){ <br>
-                                key is string and key is key of object <br>
-                            } <br>
-                            use to load key in object and if you extend that you can get value in Object
-                        </p>
-                    </li>  
-                    <li>for of 
-                        <p>
-                        for( var value of object){ <br>
-                            code <br>
-                        } <br>
-                        Use <b>for of </b> we can value in array, so if you want to 
-                        get value in object you can use <b>name_object.keys()</b>  will retrun 
-                        array and you replace object for result that (array). You can get value in object.
-                    </p>
-
-                    </li>
-                    <li> while LOOP
-                        <p> var i=100
-                            <b>while</b> (i>1){ <br>
-                                i--; <br>
+                </ul>
+            </li><!--end object-->
+            <li><h2>Math Object</h2>
+                <ul>
+                    <div class="first">
+                    <li>Pi number <p> Systax: Math.Pi()</p></li>
+                    <li>round() <p>Systax: Math.round(x.5) <br> làm tròn về số nguyên</p></li>
+                    <li>abs() <p>Systax: Math.abs(x)</p></li>
+                    <li>ceil() and floor <p>Systax: Math.ceil() || Math.floor</p></li>
+                    </div>
+                    <div class="second">
+                        
+                    <li>random() <p>Systax: Math.random() <br> return number double
+                        0  random() 1 </p> </li>
+                    <li>min() <p>Systax: Math.min(a, b, c, ...) <br> return minimum number</p></li>
+                    <li>max() <p>Systax: Math.max(a, b, c ...) <br> return maximum number</p></li>
+                    </div>
+                </ul>
+            </li> <!--end Math-->
+            <li>  <h2>if - else --- switch - case</h2>
+                <ul>
+                    <div class="first">
+                    <li> if - else <p>
+                            if(condision ) <br>
+                                khối lệnh <br>
+                            else    <br>
+                                khôi lệnh <br>
+                    </p>     
+                     </li>  
+                     <li> Rút gọn <p>
+                         systax: dk ? true : false
+                     </p></li> 
+                   </div>
+                   <div class="second">
+                    <li>switch - case
+                        <p> var x <br>
+                            switch(x) { <br>
+                                case a: <br>
+                                    code <br>
+                                    break; <br>
+                                case b: <br>
+                                    code <br>
+                                    break <br>
+                                default: <br>
+                                    code <br>
                             }
+    
                         </p>
-                    </li>
-                    <li> DO while
-                        <p> do{<br>
-                            code <br>
-                            } while(i>10);
-                        </p>
-                    </li>
-                    <li>break and continue
-                        <p>
-                            use <b>break</b> when you want to end LOOP
-                            use <b>continue</b> when you watn to next step in loop
-                        </p>
-
+    
+                              
                     </li>
                 </div>
-            </ul>
-        </li> <!--end -loop-->
-    </ul>
-    <script src="main.js"></script>
+                </ul>
+            </li> <!--end - if-else- swicth-case-->
+            <li>   <h2>LOOP</h2>
+                <ul>
+                    <div class="first">
+                        <li> for LOOP
+                            <p>
+                                for(var i=1; i\100; i++ ) <br>
+                                    code <br>
+                            </p>
+                        </li>
+                        <li> for in
+                            <p>
+                                for(var key in object){ <br>
+                                    key is string and key is key of object <br>
+                                } <br>
+                                use to load key in object and if you extend that you can get value in Object
+                            </p>
+                        </li>  
+                        <li>for of 
+                            <p>
+                            for( var value of object){ <br>
+                                code <br>
+                            } <br>
+                            Use <b>for of </b> we can get value in array, so if you want to 
+                            get value in object you can use <b>name_object.keys()</b>  will return 
+                            array and you replace object for result that (array). You can get value in object.
+                        </p>
+    
+                        </li>
+                       
+                    </div>
+                        <div class="second">
+                        <li> while LOOP
+                            <p> var i=100
+                                <b>while</b> (i>1){ <br>
+                                    i--; <br>
+                                  }
+                               </p>
+                        </li>
+                        <li> DO while
+                            <p> do{<br>
+                                code <br>
+                                } while(i>10);
+                            </p>
+                        </li>
+                        <li>break and continue
+                            <p>
+                                use <b>break</b> when you want to end LOOP
+                                use <b>continue</b> when you watn to next step in loop
+                            </p>
+    
+                        </li>
+                        <li>hasOwnProperty()
+                            <p>
+                                If you use LOOP for object array and add <b>.Prototype</b>  I think you need know. <br>
+                                Click: <a href="https://youtu.be/zfEBuHWif4Q">here</a>
+                            </p>
+                        </li>
+                    </div>
+                </ul>
+            </li> <!--end -loop-->
+            <li><h2>CallBack</h2>
+                <ul>
+                    <div class="first">
+                        <li>Define:
+                            <p>A callback is a function passed as an argument to another function, function call another function</p>
+                        </li>
+                    </div>
+                        <div class="second">
+                        <li>function CallBack
+                            <p>Function CallBack use in function of array like forEach, every, map... <br>
+                            </p>
+                        </li>
+                    </div>
+    
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <footer>
+        <ul>
+            <li>Profile Xuan_Phuoc</li>
+            <li>Số điện thoại: 0345757092</li>
+            <li>Facebook: <a target="_blank" href="https://www.facebook.com/phuoc.cao.9022/">https://www.facebook.com/phuoc.cao.9022/</a></li>
+            <li>@ Cao Xuân Phước - Đại học Khoa Học Huế</li>
+        </ul>
+    </footer>
 </body>
 </html>
