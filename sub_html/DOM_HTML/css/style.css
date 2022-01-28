@@ -1,0 +1,60 @@
+body {
+  font-size: 25px;
+  background: #f49fc4;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #2c2974;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-size: 100px;
+  color: #d6b820;
+  text-shadow: 15px 10px black;
+}
+
+header img {
+  height: 100px;
+}
+
+.content {
+  margin-left: 300px;
+  width: 1000px;
+}
+
+.content ul li {
+  list-style: decimal;
+}
+
+.content ul li img {
+  height: 400px;
+}
+
+.content ul li ul li {
+  color: #b41515;
+  font-weight: 15px;
+  list-style: lower-alpha;
+}
+
+.content ul li ul li p {
+  color: black;
+}
+
+.content ul li ul li pre {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,47 @@
+body{
+    font-size: 25px;
+    background: rgb(244,159,196)
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background: rgb(44,41,116);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    h1{font-size: 100px;
+        color: #d6b820;
+        text-shadow: 15px 10px black;
+    }
+    img{
+        height: 100px;
+    }
+    margin-bottom: 50px;
+}
+.content{
+    margin-left: 300px;
+    width: 1000px;
+    ul{
+        li{
+            list-style: decimal;
+            img{
+                height: 400px;
+            }
+            ul{
+                li{color: #b41515;
+                    font-weight: 15px;
+                    list-style: lower-alpha;
+                    p{
+                        color: black;
+                    }
+                    pre{
+                        color: black;
+                    }
+                }
+
+            }
+        }
+    }
+}

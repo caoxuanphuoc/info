@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom HTML</title>
+    <link rel="shortcut icon" href="img/favicon2.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <img src="img/logo-removebg-preview.png" alt="anh logo">
+        <h1>DOM HTML</h1>
+    </header>
+    <div class="content">
+        <ul>
+            <li><h3>Định nghĩa</h3>
+                <p>1: DOM <b>(document Object Model)</b> <br>
+                    Là quy chuẩn các thành phần của web thông qua Html để tạo lên trang web
+                </p>
+                <img src="img/pic_htmltree.gif" alt="">
+                <p>
+                    Từ mô hình trên ta có thể thấy dựa vào DOM ta có thể thay đổi chỉnh sửa điều hướng các đối
+                    tượng thành phần chính như <b>element, attribute, text </b> đây là các thành phần chính tạo
+                    nên các thẻ HTML <br>EX: thẻ &lt; a href=""> my_link &lt;/a>" <br>
+                    - a là element <br> - href là attribute <br> - my_link là text
+                </p> 
+            </li>
+            <li><h3>Get element method</h3>
+                Ta có thể thông qua document để truy xuất các thẻ. Từ đó ta có thể sử
+                dụng các hàm có sẳn trong nó
+                <ul>
+                    <li>ID
+                        <p>
+                            Systax: var node = document.getElementById('ID');
+                            <br> node trả về element của Id đó <br> EX:
+                            &lt;h1 id="abc "&gt;Hello &lt;/h1&gt;
+                            sẽ trả về <b>h1</b> là element của ID, Trả về null khi đặt cùng 
+                            id hoặc sai id.
+                            
+                        </p>
+                    </li>
+                    <li>Class
+                        <p>
+                            Systax: var node = document.getElementsByClassName('123');
+                            <br> Vì class có thể khai báo trong nhiều element nên nó
+                            sẻ trả về nhiều phần tử hơn gọi là HTML Collection có cấu trúc
+                            tương tự mảng. <br> Như vậy để truy cập tất cả các phần tử ta cần dùng
+                            đến vòng lặp để duyệt chúng.
+                        </p>
+
+                    </li>
+                    <li>Tag
+                        <p>
+                            Systax: var node = document.getElementsByTagName('img');
+                            <br> Trả về tất cả các elment cùng loại
+                        </p>
+                    </li>
+                    <li>CSS selector
+                        <p>
+                            Systax: var node = document.querySelector('hmtl p .cla');
+                            <br>Trả về chính xác element mà bạn muốn trỏ đến, cú pháp trong '' tương
+                            tự quan hệ cha con trong CSS. Trong trường hợp có nhiều element thỏa mãn 
+                            thì sẽ trả về elment đầu tiên. Tuy vậy để nhận được tất cả các element đó
+                            ta có thể sử dụng <b>document.querySelectorAll('xyz..')</b> để nhận về NodeList (truy cập như mảng).                       
+                         </p>
+                    </li>
+                    <li>HTML colection
+                        <p>
+                            Thường được sử dụng ở các elment đặc biệt như thẻ <b>a, form, ...</b>
+                            đọc thêm ở google để rõ hơn nha.
+                        </p>
+                    </li>
+                    <li>Note
+                        <p>Nếu các element được lấy từ các phương thức trên là cha của 
+                            các element con khác thì <b>element cha</b> có thể sự dụng lại các phương
+                            thức trên để tiếp tục truy xuất.
+                        <br>- CHỉ có getElementsById()  và querySelector() là tra về 1 đối tượng duy nhất
+                        còn lại điều trả về NodeList  hay HTMLCollection.
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li> <h3>innerHTML outerHTML</h3>
+                <ul>
+                    <li>Lấy các thẻ HTML 
+                        <p> * Để lấy tất cả các các thẻ con  <b>bên trong</b>  một element ta sử dụng: <br>
+                                &emsp; &emsp;&emsp;&emsp; <b>element.innerHTML</b> <br>
+                            * Để lấy toàn bộ thẻ con và thẻ cha của một element ta sử dụng: <br>
+                            &emsp;&emsp;&emsp;&emsp; <b>element.outerHTML</b>
+                        </p>
+                    </li>
+                    <li>Thiết lập các thẻ HTML
+                        <p> Ta có thể sử dụng toán tử bằng để thiết lập các thẻ mới thay thế các thẻ của element hiện tại <br>
+                            Tương tự ở ý trên để thay thế các thẻ con bên trong element bằng một hay nhiều thẻ khác: <br>
+                            &emsp;&emsp;&emsp;<b>element.innerHTML = '&lt;h1 &gt; xuanPhuoc &lt;/h1 &gt;'</b>  <br>
+                            Trường hợp muốn thay đổi luôn cả element hiện tại ta sử dụng <br>
+                            &emsp;&emsp;&emsp;<b>element.outerHTML = '&lt;h1 &gt; xuanPhuoc &lt;/h1 &gt;'</b> 
+
+                        </p>
+                    </li>
+                </ul>
+
+            </li>
+            <li><h3>DOM attribute</h3>
+                Sau khi lấy được các element ta có thể thực hiện thay đổi phần attribute hay text trong phần này
+                chúng ta sẽ tìm hiểu các cách để lấy hoặc chỉnh sửa các thuộc tính trong attribute.
+                <ul>
+                    <li>Khởi tạo attribute:
+                        <p>
+                            * Để thiết lập một attribute mới ta có thể dùng các attribute có sẳn hợp lệ thông qua dấu chấm sau
+                            đó tiến hành gán giá trị cho attribute vừa khởi tạo (ster) <br>
+                            ví dụ: ban đầu bạn có thẻ sau: &lt;a &gt; hello &lt;a &gt; <br>
+                            var x= document.querySelector('a') // lấy element từ document ra. <br>
+                              &emsp; <b>x.href ='phuoc.com'</b> <br>
+                            khi đó thẻ trở thành:  &lt;a href = 'phuoc.com'&gt; hello &lt;a &gt; <br>
+                            * Để thiết lập một attribute mới nhưng k có sẵn trong thẻ đó ta dùng cú pháp sau <br>
+                            &emsp; <b>x.setAttribute(a,b) </b><br>
+                                Trong đó:  + x: là element được gọi tới <br>
+                                &emsp;&emsp;&emsp;&emsp; + a: là attribute mới. <br>
+                                &emsp;&emsp;&emsp; &emsp;+ b: là giá trị của attribute <br>
+                        </p>
+                    </li>
+                    <li>Truy xuất giá trị attribute.
+                        <p>
+                            Nếu các attribute là hợp lệ ta có thể lấy giá trị qua toán tử chấm <br>
+                            &emsp; VD: abc.href với abc là thẻ a 
+                            Để truy xuất các attribute không hợp lệ ta dùng: <br> &emsp; &emsp; &emsp; <b>x.getAttribute('nameAttri')</b>
+                        </p>
+
+                    </li>
+                </ul>
+
+            </li>
+            <li><h3>InnerText and textContent</h3>
+                <ul>
+                    <li>Lấy giá trị của Text
+                        <p>
+                            Ta có thể dùng 2 cú pháp sau: <br>
+                            &emsp; &emsp; + <b>element.innerText</b> <br>
+                            &emsp; &emsp; + <b>element.textContent</b> <br>
+                        </p>
+                    </li>
+                    <li>Chỉnh sửa giá trị Text
+                        <p>
+                            Ta có thể dùng 2 cú pháp sau: <br>
+                            &emsp; &emsp; + <b>element.innerText = noidung</b> <br>
+                            &emsp; &emsp; + <b>element.textContent = noidung</b> <br>
+                        </p>
+                    </li>
+                    <li>Phân biệt innerText và textContent
+                        <p>
+                            <b>innerText</b> chỉ hiển thị những gì hiện trên web <br>
+                            <b>textContent </b> hiển thị nội dung của HTML <br>
+                            seach google để biết rõ hơn.    
+                        </p>
+                    </li>
+                </ul>
+            </li>
+            <li><h3>DOM CSS</h3>
+                <p> Từ elment ta có thể truy cập thuộc tính style <br>
+                    &emsp;&emsp;&emsp; <b>elment.style.width =100px</b> <br>
+                    Lệnh trên dùng để chỉnh style độ dài lại cho element
+                    . các cú pháp trên tạo ra css inline
+                </p>
+            </li>
+            <li><h3>Class list</h3>
+                Từ element ta có thể truy cập thuộc tính <b>classList</b> <br>
+                Đây là thuộc tính cho phép ta thao tác được với các class trong thẻ. Thông dụng nhất ta có 5 thuộc tính sau <br>
+                <ul>
+                    <li>ADD
+                       <p> Dùng để thêm class mới vào thẻ, <b>element.classList.add('class1', 'class2')</b></p>
+                    </li>
+                    <li>Contains
+                        <p>Kiểm tra class có nằm trong classList không <b>element.classList.contains('class1')</b> trả về bool</p>
+                    </li>
+                    <li>Remove
+                        <p>Loại bỏ class ra khỏi classList <b>element.classList.remove('class1')</b></p>
+                    </li>
+                    <li>Toggle
+                        <p>Nếu tồn tại <b>class1</b> thì xóa, nếu không thì thêm <b>class1</b> vào classList <br>
+                        &emsp; &emsp13;<b>element.classList.toggle('class1')</b></p>
+                    </li>
+                </ul>
+            </li>
+            <li><h3>DOM event</h3>
+                <p>DOM event là các thuộc tính giúp ta nhận biết, và xử lý, trong quá trình giao tiếp với người dùng
+                    như click, hover, stroll...  <br> Trong Javascript có rất nhiều event các bạn có thể tham khảo thêm ở 
+                    <a href="https://www.w3schools.com/jsref/dom_obj_event.asp" style="color: rgb(14, 145, 20); 
+                    text-decoration: none;"> <b>đây</b></a> <br>
+                    Có hai cách để thêm DOM event vào HTML: 
+                </p>
+                <ul>
+                    <li>Attribute event
+                        <p>
+                            Ta có thể viết ngay trong attribute. <br>
+                            &emsp; ex: <b> &lt;h1 onclick='console.log('phuoc')' &gt; hello&lt; h1 &gt; </b> <br>
+                            Điều này có nghĩa mỗi lần click vào h1 thì console hiển thị 'phuoc' <br>
+                            Giá trị được gán cho onclick hay các event khác đoạn mã Javascript được thêm trong dấu ''
+                        </p>
+                    </li>
+                    <li>Assign event using the element Node
+                        <p>
+                            B1: get được element muốn thêm sự kiện. <br>
+                            B2: <b> <i>element.onclick = function(){ <br>
+                                &emsp;&emsp;&emsp;  console.log('phuoc') <br>
+                                &emsp;&emsp;}</i></b> <br>
+                            Với ý nghĩa như phần đầu nhưng ở đây ta truyền event theo cách khác
+                        </p>
+                    </li>
+                </ul>
+
+            </li>
+            <li><h3>DOM EVENT INPUT</h3>
+                <p>
+                    Phần này giúp bạn biết và hiểu được một vài event thông dụng.
+                </p>
+                <ul>
+                    <li>Input
+                        <p>Trong thực tế ta thương làm việc với form rất nhiều, nên việc lấy dữ liệu từ các thẻ input vô cùng
+                            phổ biến. <br>
+                            Để lấy được input đầu tiên bạn phải lấy được element mà mình muốn (ở đây mình đặt nó là <b>element</b> )
+                            bằng các thuộc tính từ document đã nói ở Phần 2 <br>
+                            Sau đó dùng cú pháp bằng 2 cách sau sau: <br>
+                             &emsp;1: <i>element.onchange = function(e){ <br>
+                                &emsp;&emsp;  &emsp; console.log(e.target.value); <br>
+                                &emsp;&emsp; }</i> <br>
+                             Lệnh trong function được thực thi khi user click ra khỏi khung input và giá trị đó phải khác giá trị trước đó. <br>
+                             &emsp;2: <i>element.oninput = function(e){ <br>
+                                &emsp;&emsp;&emsp; console.log(e.target.value); <br>
+                                &emsp;&emsp; }</i> <br>
+                             Lệnh trong function được thực thi khi user thực hiện từng thao tác. <br>
+                        </p>
+                    </li>
+                </ul>
+
+            </li>
+            <li><h3> PreventDefault and StopPropagation</h3>
+                <ul>
+                    <li> PreventDefault 
+                        <p>
+                            Dùng để ngăn chặn các thuộc tính mặc định ví dụ ấn vào text của thẻ a thi sẽ dấn đến link đó. <br>
+                            Systax: <b>e.preventDefault();</b> <br> Với e là biến e trong function của các event.
+                        </p>
+                    </li>
+                    <li>StopPropagation
+                        <p>Dùng để ngăn chặn sự nỗi bọt của event  vd: cả thẻ con và thẻ cha điều có event nhưng khi tác động
+                            vào thẻ con thì event của thẻ con và cha điều được thực hiện. Để ngăn chặn việc đó (chỉ kích hoạt event 
+                            của thẻ con) ta dùng <b>StopPropagation</b> <br> Systax: <b>e.stopPropagation()</b> <br> Với e là biến e trong function của các event.
+
+                        </p>
+                    </li>
+                </ul>
+
+            </li>
+            <li><h3>Event listener</h3>
+                <p>
+                    Event lisener cũng tương tụ như DOM event. Sự khác nhau của chúng là các nhận biết sự kiện và xóa sự kiện
+                    . Khi muốn xóa DOM event thì ta sẽ phải  gán lại sự kiện đó cho một hàm trống. Với lisener ta chỉ cần dùng
+                    phương thức có sẳn để gỡ bỏ. <br>
+                    Systax: <b> <i>element.addEventListener('even', function(){ <br>
+                        &emsp; &emsp; &emsp; &emsp; &emsp;lệnh <br>
+                        &emsp;  &emsp; &emsp;}) <br></i>
+                     </b>
+                    Systax: <b><i> element.removeEventListener('even', function(){ <br>
+                        &emsp; &emsp; &emsp; &emsp; &emsp;lệnh <br>
+                        &emsp; &emsp;&emsp;     }  )<br></i>
+                    </b>
+                </p>
+
+
+            </li>
+    
+        </ul>
+    </div>
+  
+    <div class="box">
+        haha
+    </div>
+  <script src="main.js"></script>
+ 
+</body>
+</html>
