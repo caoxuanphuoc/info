@@ -66,4 +66,87 @@
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
 }
+
+body {
+  background-image: url("https://phunugioi.com/wp-content/uploads/2021/12/background-Tet-1-820x461.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 860px;
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-image: url("https://s1.1zoom.me/b7866/985/Christmas_Snowflakes_Red_background_Template_573816_600x800.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+  }
+  .que {
+    width: 500px;
+    position: relative;
+    top: 300px;
+    left: 60px;
+  }
+  .que h1 {
+    width: 100%;
+    color: goldenrod;
+    font-size: 50px;
+    text-shadow: 5px 5px 5px black;
+  }
+  .ans {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-left: -250px;
+    cursor: pointer;
+  }
+  .ans .ans1 {
+    margin-left: 60px;
+    height: 80px;
+    width: 120px;
+    background: #038d16;
+    border: 1px solid black;
+    border-radius: 10px;
+    -webkit-box-shadow: 5px 5px 10px black;
+            box-shadow: 5px 5px 10px black;
+    position: relative;
+    top: 390px;
+    left: 50%;
+  }
+  .ans .ans1 span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+    font-size: 50px;
+  }
+  .ans .ans1:hover {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  .congat {
+    display: none;
+    position: relative;
+    background: #bef008;
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    left: 100px;
+    top: 200px;
+    -webkit-box-shadow: 10px 10px 10px black;
+            box-shadow: 10px 10px 10px black;
+  }
+  .congat span {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    -webkit-transform: translateX(-10%) translateY(-50%);
+            transform: translateX(-10%) translateY(-50%);
+    font-size: 40px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
