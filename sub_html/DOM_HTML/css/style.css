@@ -1,6 +1,6 @@
 body {
   font-size: 25px;
-  background: #f49fc4;
+  background: goldenrod;
 }
 
 * {
@@ -9,7 +9,8 @@ body {
 }
 
 header {
-  background: #2c2974;
+  border-bottom: 5px solid green;
+  background: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,13 +23,13 @@ header {
 }
 
 header h1 {
-  font-size: 100px;
-  color: #d6b820;
+  font-size: 70px;
+  color: #de5b11;
   text-shadow: 15px 10px black;
 }
 
 header img {
-  height: 100px;
+  height: 70px;
 }
 
 .content {

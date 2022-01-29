@@ -14,12 +14,12 @@ a:hover {
 }
 
 header {
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid #03c914;
   background: #030105;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 100px;
+  height: 80px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: center;
@@ -28,7 +28,7 @@ header {
 }
 
 header img {
-  height: 100px;
+  height: 70px;
 }
 
 header .logo1 {
@@ -45,7 +45,7 @@ header .logo1 img {
 }
 
 header .logo1 h1 {
-  font-size: 90px;
+  font-size: 70px;
   color: #de5b11;
 }
 

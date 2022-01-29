@@ -1,22 +1,23 @@
 body{
     font-size: 25px;
-    background: rgb(244,159,196)
+    background: goldenrod;
 }
 *{
     margin: 0;
     padding: 0;
 }
 header{
-    background: rgb(44,41,116);
+    border-bottom: 5px solid green;
+    background: black;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    h1{font-size: 100px;
-        color: #d6b820;
+    h1{font-size: 70px;
+        color: #de5b11;
         text-shadow: 15px 10px black;
     }
     img{
-        height: 100px;
+        height: 70px;
     }
     margin-bottom: 50px;
 }

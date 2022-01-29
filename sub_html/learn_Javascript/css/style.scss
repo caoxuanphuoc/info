@@ -11,14 +11,14 @@ a:hover{
     color: rgb(26, 141, 10);
 }
 header{
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid rgb(3, 201, 20);
     background: rgb(3, 1, 5);
     display: flex;
-    height: 100px;
+    height: 80px;
     justify-content: space-around;
     align-items: center;
     img{
-        height: 100px;
+        height: 70px;
     }
     .logo1{
         display: flex;
@@ -27,7 +27,7 @@ header{
             height: 50px;
         }
         h1{
-            font-size: 90px;
+            font-size: 70px;
             color:#de5b11;
         }
     }
