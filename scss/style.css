@@ -262,6 +262,7 @@ footer a {
     top: 32%;
   }
   .fullBox .option {
+    width: 80%;
     position: absolute;
     top: 40%;
     left: 40px;
@@ -269,7 +270,7 @@ footer a {
   .fullBox .option .op1 {
     margin-bottom: 15px;
     position: relative;
-    width: 250px;
+    width: 100%;
     height: 40px;
     background: #161b82;
     border-radius: 5px;
@@ -281,7 +282,7 @@ footer a {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 30px;
+    left: 15%;
     color: white;
     font-family: 'Public Sans', sans-serif;
     font-size: 13px;
@@ -291,7 +292,7 @@ footer a {
     top: 50%;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
-    left: 200px;
+    left: 82%;
     color: #181a1b;
   }
   .fullBox .option .op1:hover {

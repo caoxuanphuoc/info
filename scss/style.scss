@@ -228,13 +228,14 @@ footer{
             }
         }
         .option{
+            width: 80%;
             position: absolute;
             top: 40%;
             left: 40px;
             .op1{
                 margin-bottom: 15px;
                 position: relative;
-                width: 250px;
+                width: 100%;
                 height: 40px;
                 background: rgb(22,27,130);
                 border-radius: 5px;
@@ -242,7 +243,7 @@ footer{
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    left: 30px;
+                    left: 15%;
                     color: white;
                    font-family: 'Public Sans', sans-serif;
                     font-size: 13px;
@@ -251,7 +252,7 @@ footer{
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
-                    left: 200px;
+                    left: 82%;
                     color: rgb(24,26,27);
                 }
                 transition: 0.4s;
