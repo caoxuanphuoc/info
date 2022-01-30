@@ -193,7 +193,7 @@ footer{
 @media screen and(max-width: 46.1875em) {
     .fullBox{
         position: relative;
-        width: 390px;
+        width: 90%;
         height: 700px;
         border: 1px solid rgb(54,59,61);
         border-radius: 10px;
@@ -318,6 +318,7 @@ footer{
         }
     }
     footer{
+        
         width: 100%;
         padding-top: 30px;
         padding-bottom: 10px;
@@ -332,6 +333,5 @@ footer{
         a{
             color: white;
         }
-    
     }
 }

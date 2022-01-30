@@ -226,7 +226,7 @@ footer a {
 @media screen and (max-width: 46.1875em) {
   .fullBox {
     position: relative;
-    width: 390px;
+    width: 90%;
     height: 700px;
     border: 1px solid #363b3d;
     border-radius: 10px;
