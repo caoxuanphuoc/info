@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/icon/favicon2.ico"/>
+    <link rel="shortcut icon" href="../../image/icon/favicon2.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+    <h1>Tìm hiểu và ứng dụng Segment Tree</h1>
+    <ul>
+        <li>Định Nghĩa 
+            <p>Segment Tree: là một cây nhị phân đầy đủ. Nút gốc sẽ quản lý toàn bộ
+                đãy số của ta, trong khi đó 2 nút con sẽ chia đôi ra, Nút bên trái quản lý
+                [1,N/2] và nút bên phải quản lý [N/2+1, N], tương tự như vậy các nút con sau 
+                cũng sẽ quản lý 1/2 dữ liệu của nút cha.
+            </p>
+            <img src="img/tree.png" alt="">
+        </li>
+        <li>Cài đặt và lưu trữ.
+            <p>Câu hỏi đặt ra làm thế nào để có thể lưu trữ, quản lý được dữ liệu của cây này.
+                <br>Sử dụng mảng để lưu. Bằng cách sau: <br>
+                &emsp;  Gọi <i>i</i> là vị trí của các nút (của cây) khi được đưa vào mảng. <br>
+                &emsp; Nút gốc có <i>i</i> = 1, nút con bến trái sẽ được lưu ở <i>il</i>= 2*i,
+                nút con phải lưu ở <i>ir</i>=2*i+1. Các nút con tiếp theo cũng lưu tương tự như vậy.
+                Với cách lưu này độ dài mảng sẽ không vượt quá 4*N.
+            </p>
+            <img src="img/set_tree.png" alt="">
+            <p>Vậy làm thế nào để chuyển từ mảng lưu giá trị thông thường
+                sang cấu trúc của Segment Tree tham khảo code sau:
+            </p>
+            <div class="code">
+                <span>Code</span>
+                <div class="campust">
+                    <p>
+                        vector&lt;<b>int</b>> a; <i>//a là mảng giá trị</i><br>
+                        vector &lt;<b>int</b>> tree (a.size()*4) <br>
+                        <b>void build_tree</b>(int id, int l, int r){ <br>
+                        &emsp;if(l==r) {<br>
+                        &emsp;&emsp;tree[id]= a[l];<br>
+                        &emsp;&emsp;return(); <br>
+                        &emsp;} <br>
+                        &emsp; <b>int</b> mid= (l + r)/2;<br>
+                        &emsp; build_tree(id*2, l, mid); <br>
+                        &emsp; build_tree(id*2, mid+1, r); <br>
+                        &emsp; tree[id]= max(tree[id*2], tree[id*2+1]); <br>
+                        } <br>
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li>Các thành phần chính:
+            <p>Để hiểu hơn về cách mà một cây hoạt động ta tìm hiểu ví dụ sau: <br>
+                Cho dãy N phần tử. Ban đầu mỗi phần tử có giả trị 0. <br>
+                Có Q truy vấn. có hai truy vấn như sau: <br>
+                    Gán giá trị v cho phần tử ở vị trí i. <br>
+                    Tìm giá trị lớn nhất cho đoạn [i,j]. <br>
+            </p>
+            <div class="code"> 1: Gán giá trị cho một phần tử bất kỳ. 
+             
+                <p>Vì bài toán này có yêu cầu tìm phần tử lớn nhất trong đoạn,
+                    nên khi cập nhật một nút nào đó bất kỳ ta cũng phải cập nhật lại các
+                    nút cha để tránh mất đi bản chất ban đầu. Tham khảo ảnh.
+                </p>
+                <img src="img/ex1.png" alt=""> <br>
+                <span>Code</span>
+                <div class="campust">
+                    <p>
+                        <i>Id là vị trí nút gốc ban đầu</i> <br>
+                        <b>void update</b>(int id, int l, int r, int i, int v) {<br>
+                        &emsp;  if (i &lt; l || r &lt; i) {<br>
+                        &emsp;&emsp;  <i>//kiểm tra i, để điều hướng tìm kiếm.</i><br>
+                        &emsp;&emsp;    return ;<br>
+                        &emsp;    }<br>
+                        &emsp; if (l == r) {<br>
+                        &emsp;&emsp;<i>// nhận biết được lá</i><br>
+                        &emsp;&emsp;ST[id] = v;<br>
+                        &emsp;&emsp;     return ; <br>
+                        &emsp; }<br>
+                        <i>//đi tìm nút i từ gốc xuống</i>
+                        &emsp; int mid= (l+r)/2; <br>
+                        &emsp; update(id*2, l, mid, i, v); <br>
+                        &emsp; update(id*2+1, mid + 1, r, v); <br>
+                        &emsp; <i>// sau khi cập nhật 2 nút con xong, thì cập nhật giá trị nút cha</i> <br>
+                        &emsp; ST[id]= max(ST[id*2], ST[id*2+1]); <br>
+                        }
+
+                    </p>
+                </div>
+                
+            </div>
+            <div class="code"><br> 2: Lấy giá trị max trong đoạn [l,r] <br> <br>
+                <span>Code</span>
+                <div class="campust">
+                    <p>
+                        <b>int get </b> (int id, int l, int r, int u, int v){<br>
+                            &emsp;        <i>//nếu nằm ngoài thì không trả về</i> <br>
+                            &emsp;      if(v &lt; l || u>r)<br>
+                            &emsp; &emsp;        return -INFINTY;<br>
+                            &emsp;     if( u&lt;=l && r&lt;=v)<br> <i>//nếu chứa đoạn LR thì trả về</i>
+                            &emsp; &emsp;           return ST[id];<br>
+                            &emsp;     int mid= (l+r)/2;<br>
+                            &emsp; &emsp;        return max(get(id*2, l, mid, u, v), get(id*2+1, mid+1, r, u, v))<br>
+                        } <br>
+                    </p>
+                </div>
+            </div>
+        </li>
+        <li>Bài tập :
+            <p>Cho một mảng số nguyên bạn có thể thực hiên 2 thao tác sau: <br>
+                &emsp13; * cập nhật một giá trị bất kỳ. <br>
+                &emsp13; * Trả về giá trị min của đoạn [u, v] (l &lt;= u, v &lt;= r) <br>
+                với Q truy vấn như trên, với mỗi thao tác thứ 2 in ra giá trị nhỏ nhất trong đoạn. <br>
+                với <b><i>'U pos value '</i></b> là cú pháp dữ liệu thao tác cập nhật <br>
+                với <b><i>'X u v  '</i></b> là cú pháp dữ liệu thao tác lấy giá trị <br>
+            </p>
+            <div class="testcase">
+            <table>
+                <tr >
+                    <th style="border: 1px solid black;">Input</th>
+                    <th style="border: 1px solid black;">Output</th>
+                </tr>
+                <tr >
+                    <td style="border: 1px solid black;">4 3 <br>
+                        4 5 3 7 <br>
+                        U 2 2 <br>
+                        U 4 1 <br>
+                        X 1 4 <br></td>
+                    <td style="border: 1px solid black; " valign="top">1</td>
+                </tr>
+            </table>
+             </div>
+             <div class="code">
+                 <span>Code</span>
+                 <div class="campust"> 
+                    <code>
+                        #include<bits/stdc++.h> <br>
+                        #define ll long long<br>
+                        #define F first<br>
+                        #define S second<br>
+                        #define pb push_back<br>
+                        using namespace std;<br>
+                        vector<int> a;<br>
+                        void build_tree(int id, int l, int r, vector<int> &tree){<br>
+                            &emsp;     if(l==r){<br>
+                                &emsp;&emsp;     tree[id]=a[l];<br>
+                                &emsp;&emsp; return;<br>
+                                &emsp; }<br>
+                                &emsp; int mid= (l+r)/2;<br>
+                                &emsp; build_tree(id*2, 1, mid, tree);<br>
+                                &emsp; build_tree(id*2+1, mid+1, r, tree);<br>
+                                &emsp; tree[id]= min(tree[id*2],tree[id*2+1]);<br>
+                         }<br>
+                         void update(int id, int l, int r, int i, int v, vector<int> &tree){<br>
+                            &emsp; if(i<l || i>r)<br>
+                                &emsp;&emsp;     return;<br>
+                                &emsp; if(i==l && l==r){<br>
+                                    &emsp;&emsp;    tree[id]=v;<br>
+                                    &emsp;&emsp;   return;<br>
+                                    &emsp; }<br>
+                                    &emsp; int mid= (l+r)/2;<br>
+                                    &emsp; update(id*2, l, mid, i, v,tree);<br>
+                                    &emsp; update(id*2+1, mid+1, r, i, v, tree);<br>
+                                    &emsp;tree[id]= min(tree[id*2], tree[id*2+1]);<br>
+                         }<br>               
+                         int get_min(int id, int l, int r, int u, int v,vector<int> &tree){<br>
+                            &emsp; if(v &lt; l || r&lt;  u)<br>
+                            &emsp;&emsp;    return INT_MAX;<br>
+                            &emsp; if(r==l)//u&lt; =l && r&lt; =u<br>
+                            &emsp;&emsp;    return tree[id];<br>
+                            &emsp; int mid= (l+r)/2;<br>
+                            &emsp; return min( get_min(id*2, l, mid, u, v, tree),<br>
+                            &emsp;&emsp;&emsp;           get_min(id*2+1,mid+1, r, u, v, tree));<br>
+                         }<br>
+                         int main(){<br>
+                         int n,q;<br>
+                         cin>>n>>q;<br>
+                         vector<int> tree(n*4,0);<br>
+                         a.resize(n+1);<br>
+                         &emsp;   for(int i=1;i&lt; =n;i++)<br>
+                         &emsp;&emsp;       cin>>a[i];<br>
+                         build_tree(1,1,n,tree);<br>
+                         while(q--){<br>
+                            &emsp;   char x;<br>
+                            &emsp;  cin>>x;<br>
+                            &emsp;  if(x=='U'){<br>
+                                &emsp;&emsp;    int i,v; 	// i is pos and v is value<br>
+                                &emsp;&emsp;    cin>>i>>v;<br>
+                                &emsp;&emsp;      update(1 ,1 ,n ,i ,v ,tree);<br>
+                             }<br>
+                             &emsp;  else{<br>
+                                &emsp;&emsp;  int u,v;<br>
+                                &emsp;&emsp;  cin>>u>>v; //[u,v] is length sub_array<br>
+                                &emsp;&emsp;   cout&lt; <get_min(1, 1, n, u, v ,tree)&lt; &lt;;	<br>
+                                    &emsp; }<br>
+                                    &emsp; }<br>
+                        }<br>
+                    </code>
+                 </div>
+             </div>
+             
+
+        </li>
+        <li>Đọc thêm <b>Segment Tree</b>
+            <ul>
+                <li>
+                    VNOI: <a href="https://vnoi.info/wiki/algo/data-structures/segment-tree-extend.md#c%C3%A0i-%C4%91%E1%BA%B7t" style="color:rgb(223, 11, 11); text-decoration: none; ">Wiki VNOI</a>
+                </li>
+                <li>Codeforces: <a href="https://codeforces.com/edu/course/2" style="color:rgb(223, 11, 11); text-decoration: none; ">Edu Codeforces</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
