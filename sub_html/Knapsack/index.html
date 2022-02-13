@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="shortcut icon" href="image/icon/favicon2.ico"/>
+    <link rel="shortcut icon" href="../../image/icon/favicon2.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <title>Document</title>
+</head>
+<body>
+    <div class="contain">
+    <h1>Bài Toán Cái Túi - Quy Hoạch Động</h1>
+    <ul>
+        <li>Bài Toán 
+            <p>Có <b>N</b> đồ vật mỗi vật có 2 giá trị chính là <b>w</b> là trọng lượng của vật và
+                <b>v</b> là giá trị của vật. Bạn có một chiếc túi với trọng tải không vượt quá <b>u</b>
+                <br> Hãy tìm cách để bỏ được các đồ vật vào túi sao cho tổng giá trị là lớn nhất, và
+                tổng trọng lượng không vượt quá <b>u</b> <br>
+            </p>
+            <img src="img/baiToan.png" alt="">
+        </li>
+        <li>Cài đặt và lưu trữ.
+            <p> Đây là bài toán có nhiều hướng giải quyết như tham lam, trâu, backtracking. Nhưng
+                xét về mặt tối ưu độ phức tạp và tính chính xác thì dùng quy hoạch động sẽ giúp 
+                giải quyết được các vấn đề trên. <br>
+            </p>         
+            <p>
+                Để giải quyết bài toán này đầu tiên ta cần xác định được bài toán con là gì.
+                Tức là giá trị của các phần tử trong bảng mà chúng ta sẽ lập ra. <br>
+                <b>Bài toán con: F[i][j]</b> là giá trị lớn nhất có được khi có i đồ vật và cái túi
+                 đang đeo có trọng tải là j. Trong quy hoạch động các bài toán con là cơ sở quan trọng
+                 để hoàn thành bảng các giá trị tại mỗi phần tử luôn là tối ưu. <br>
+                 <b>Bài toán cơ sở: F[0][j] và F[i][0] </b> ban đầu các phần tử này sẽ bằng 0, vì những lý do
+                 sau: <br> + F[0][j]=0 vì không có đồ vật nào cả nên giá trị bằng 0, mặc cho túi có sức chứa. <br>
+                 + F[i][0] =0 vì cái túi không có dung lượng để chứa cho dù có nhiều đồ vật. <br>
+                 Như vậy ta đã xác định được những thứ cơ bản nhất để đi vào bài toán.
+                 Chúng ta sẽ tạo bảng dựa trên những thứ đã có. Bảng bao gồm N hàng và W cột.
+                có cột đầu tiên và hàng đầu tiên bằng 0;
+            </p>
+            <img src="img/bang1.png" alt="">
+        </li>
+        <li>Công thức quy Hoạch động
+            <p>Có hai trường hợp chính có thể xảy ra: <br>
+                + Không thêm vật được vào túi. <br>
+                + Thêm được vật vào túi <br>
+                <b>- Không thêm được vào túi</b> <br>
+                    khi không thêm được vào túi đồng nghĩa khối lượng vật thứ i đã vượt quá trọng tải của bao
+                    lúc đó F[i][j]= F[i-1][j]. Tức là giữ nguyên các vật trong túi. (hãy hiểu bước này rồi đi đến bước  thứ 2). <br>
+                <b>- Thêm được vào túi.</b> <br>
+                    Khi thêm vào túi đồng nghĩa với việc khối lượng của vật thứ i luôn nhỏ hơn
+                    hoặc bằng trọng tải mà bao chứa được. Lúc đó ta sẽ thực hiện phép so sánh sau:
+                    <br> F[i][j] = <b>max(F[i-1][j], F[i-1][j-w] + v[i])</b> <br>
+                    So sánh xem liệu nếu thêm đồ vật i vào thì giá trị đó có lớn hơn giá trị lúc ta không thêm vào hay không.
+                    Thoạt nhìn sẽ thấy câu nói này hơi mâu thuẩn vì thêm vào thì phải nhiều hơn không thêm chứ. Nhưng
+                    các bạn hãy chú ý <b>F[i-1][j-w]</b> khi thêm đồ vật i vào ta buộc phải bỏ các vật trước nó đi
+                    để trọng lượng dư ra sau đó mới cộng giá trị (v[i]) của vật đó vào. Như vậy là ta có thể hoàn thành.
+                    F[n][w] là kết quả ta cần tìm.
+                </p>
+            <img src="img/bang2.png" alt="">
+            <div class="code"><br> Cài đặt thuật toán <br> <br>
+                <span>Code</span>
+                <div class="campust">
+                    <p>
+                        #include &lt;bits/stdc++.h> <br>
+                        #define ll long long<br>
+                        #define F first<br>
+                        #define S second<br>
+                        #define pb push_back<br>
+                        #define all(v) v.begin(), v.end()<br>
+                        #define in_array(a) for(auto &c:a)cin>>c<br>
+                        <b>using namespace</b> std;<br>
+                        <b>int main()</b>{<br>
+                        &emsp;&emsp;    ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);<br>
+                        &emsp;&emsp;    ll n, w;<br>
+                        &emsp;&emsp;    cin>>n>>w;<br>
+                        &emsp;&emsp;    vector<pair<ll,ll>> a(n+1);<br>
+                        &emsp;&emsp;    <b>for</b>( <b>int</b> i=1;i&lt;=n;i++)<br>
+                        &emsp;&emsp;&emsp;&emsp;        cin>>a[i].F>>a[i].S;<br>
+                        &emsp;&emsp;        vector<vector<ll> > val(n+1, vector<ll> (w+1,0));<br>
+                        &emsp;&emsp;            <b>for</b>(<b>int</b> i=1;i&lt;=n;i++){<br>
+                        &emsp;&emsp; &emsp;&emsp;               ll kg= a[i].F, cost=a[i].S;<br>
+                        &emsp;&emsp;&emsp;&emsp;                <b>for</b>(int j=1;j&lt;=w;j++){<br>
+                        &emsp;&emsp;&emsp;&emsp;  &emsp;&emsp;                 <b>if</b>(j-kg>=0){<br>
+                        &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;   &emsp;&emsp;                    val[i][j]=max(val[i-1][j], val[i-1][j-kg] + cost);<br>
+                        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;                    }<br>
+                        &emsp;&emsp;&emsp;&emsp; &emsp;&emsp;                   <b>else</b>	val[i][j]= val[i-1][j];<br>
+                        &emsp;&emsp;&emsp;&emsp;                }<br>
+                        &emsp;&emsp;            }<br>
+                        &emsp;&emsp;          cout&lt;&lt;val[n][w];<br>
+                                }<br>
+                    </p>
+                </div>
+            </div>
+        </li>
+       
+    </ul>
+</div>
+</body>
+</html>
