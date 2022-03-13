@@ -95,6 +95,28 @@
                 </div>
             </div>
         </li>
+        <li>Mở rộng công thức
+            <p>Trong các trường hợp cân tối ưu ta sử dụng đoạn code sau. Với cú pháp
+                nhập như trên ta có
+            </p>
+            <div class="code"><br> Cài đặt thuật toán <br> <br>
+                <span>Code</span>
+                <div class="campust">
+                    <p>
+                        <i>\\a[i].F is weight and a[i].S is value</i> <br>
+                        const ll N=1e5;<br>
+                        vector&lt;int> F(N);<br>
+                        int main(){<br>
+                            &emsp;    for(int i=1;i&lt;n;i++){<br>
+                                &emsp; &emsp;      for(int j=w-a[i].F;j>=0;j--){<br>
+                                    &emsp; &emsp; &emsp;       F[j+a[i].F]= max(F[j+a[i].F], F[j] + a[i].S);<br>
+                                    &emsp; &emsp;  }<br>
+                                    &emsp;  }<br>
+                        }<br>
+                    </p>
+                </div>
+            </div>
+        </li>
        
     </ul>
 </div>
